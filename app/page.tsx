@@ -148,15 +148,13 @@ const features = [
 
 export default function Home() {
   const router = useRouter();
-
-  return (
-    <div className="font-sans min-h-screen p-8 sm:p-20 grid place-items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-300 dark:divide-white/[.1] w-full max-w-6xl gap-10">
+return (
+    <div className="font-sans min-h-screen w-full px-4 sm:px-20 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-300 dark:divide-white/[.1] w-full max-w-6xl mx-auto gap-10">
         {/* 🔹 ซ้าย: ฝั่งนายจ้าง */}
-        <main className="flex flex-col gap-8 px-4 md:px-10">
+        <main className="flex flex-col gap-8 px-2 sm:px-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            🕵🏻🏢 ฟีเจอร์หลักของ เว็บสมัครงานฝั่งผู้รับสมัครงาน (นายจ้าง /
-            บริษัท)
+            🕵🏻🏢 ฟีเจอร์หลักของ เว็บสมัครงานฝั่งผู้รับสมัครงาน (นายจ้าง / บริษัท)
           </h2>
           <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-2 py-1 rounded w-max">
             ประกาศงาน → คัดกรอง → สัมภาษณ์ → จ้างงาน
@@ -173,51 +171,31 @@ export default function Home() {
             <li>ระบบทีมงาน HR</li>
             <li>ความปลอดภัยและความเป็นส่วนตัว</li>
           </ol>
-          {/* <button
-            onClick={() => router.push("/featureOverview")}
-            className="rounded-full border border-black/[.08] dark:border-white/[.1] transition-colors hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] px-5 py-3 text-sm sm:text-base w-max">
-            🛠 ฟีเจอร์เด่นของ เว็บสมัครงานฝั่งผู้รับสมัครงาน (นายจ้าง / บริษัท)
-          </button> */}
 
-          <section className="w-full max-w6xl mx-auto pt-8">
+          <section className="w-full pt-8">
             <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">
               🛠 ฟีเจอร์เด่น (พร้อมตัวอย่าง UI)
             </h3>
-            <div className="font-sans min-h-screen p-6 sm:p-2 md:p-4 bg-gray-50">
+            <div className="font-sans p-4 sm:p-2 md:p-4 bg-gray-50">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-xl sm:text-xl font-bold text-center text-blue-600 mb-6">
+                <h2 className="text-xl font-bold text-center text-blue-600 mb-6">
                   🕵🏻🏢 ฟีเจอร์เด่นของระบบหางานเพื่อผู้สูงอายุ / ผู้พิการ
                 </h2>
-{/* 
-                <div className="text-sm sm:text-base text-center text-gray-600 mb-8">
-                  ระบบถูกออกแบบให้เข้าถึงง่าย ใช้งานง่าย
-                  และครอบคลุมสำหรับผู้สูงอายุและผู้พิการ
-                </div> */}
 
-                <div className="grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-1 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 gap-8 justify-items-center">
                   {featuresJob.map((f) => (
                     <div
                       key={f.id}
                       className="bg-white rounded-2xl shadow-md p-6 border border-gray-200 flex flex-col gap-4 min-h-[380px] w-full max-w-[520px] mx-auto transition-all hover:shadow-lg">
-                      <div className="text-lg sm:text-xl font-semibold text-blue-700">
+                      <div className="text-lg font-semibold text-blue-700">
                         {f.id}. {f.icon} {f.title}
                       </div>
-                      <p className="text-gray-700 text-base leading-relaxed">
-                        {f.description}
-                      </p>
+                      <p className="text-gray-700">{f.description}</p>
                       <div className="rounded-md overflow-hidden border border-gray-100 bg-gray-50">
                         {f.component?.()}
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="flex justify-center mt-12">
-                  <button
-                    onClick={() => router.push("/featureOverview")}
-                    className="rounded-full bg-black text-white dark:bg-white dark:text-black transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] px-6 py-3 text-sm sm:text-base">
-                    🛠 ดูรายละเอียดเพิ่มเติม
-                  </button>
                 </div>
               </div>
             </div>
@@ -225,8 +203,7 @@ export default function Home() {
         </main>
 
         {/* 🔸 ขวา: ฝั่งผู้สูงอายุ / ผู้พิการ */}
-        <main className="flex flex-col gap-8 px-4 md:px-10">
-          {/* หัวข้อ */}
+        <main className="flex flex-col gap-8 px-2 sm:px-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             👵🏻👴🏻 ฟีเจอร์หลักของ เว็บหางานเพื่อผู้สูงอายุ / ผู้พิการ
           </h2>
@@ -234,7 +211,6 @@ export default function Home() {
             สมัครโปรไฟล์ → ค้นหางาน → สมัครงาน → รอสัมภาษณ์ → ได้งาน
           </code>
 
-          {/* รายการฟีเจอร์แบบ bullet */}
           <ol className="font-mono list-decimal list-inside text-sm leading-relaxed">
             <li>สร้างโปรไฟล์ผู้สมัครงาน (Job Seeker Profile)</li>
             <li>ระบบแนะนำงานอัตโนมัติ (AI Job Matching)</li>
@@ -248,40 +224,29 @@ export default function Home() {
             <li>ระบบช่วยสร้างเรซูเม่</li>
           </ol>
 
-          {/* ปุ่ม */}
-          {/* <button
-            onClick={() => router.push("/featureOverview")}
-            className="rounded-full bg-black text-white dark:bg-white dark:text-black transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] px-5 py-3 text-sm sm:text-base w-max">
-            🛠 ฟีเจอร์เด่นของระบบหางานเพื่อผู้สูงอายุ / ผู้พิการ
-          </button> */}
-
-          {/* 🔹 Preview Features */}
-          <section className="w-full max-w6xl mx-auto pt-8">
+          <section className="w-full pt-8">
             <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">
               🛠 ฟีเจอร์เด่น (พร้อมตัวอย่าง UI)
             </h3>
-            <div className="font-sans min-h-screen p-6 sm:p-2 md:p-4 bg-gray-50">
+            <div className="font-sans p-4 sm:p-2 md:p-4 bg-gray-50">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-xl sm:text-xl font-bold text-center text-blue-600 mb-6">
+                <h2 className="text-xl font-bold text-center text-blue-600 mb-6">
                   👵🏻👴🏻 ฟีเจอร์เด่นของระบบหางานเพื่อผู้สูงอายุ / ผู้พิการ
                 </h2>
 
-                <div className="text-sm sm:text-base text-center text-gray-600 mb-8">
-                  ระบบถูกออกแบบให้เข้าถึงง่าย ใช้งานง่าย
-                  และครอบคลุมสำหรับผู้สูงอายุและผู้พิการ
+                <div className="text-sm text-center text-gray-600 mb-8">
+                  ระบบถูกออกแบบให้เข้าถึงง่าย ใช้งานง่าย และครอบคลุมสำหรับผู้สูงอายุและผู้พิการ
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-1 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 gap-8 justify-items-center">
                   {features.map((f) => (
                     <div
                       key={f.id}
                       className="bg-white rounded-2xl shadow-md p-6 border border-gray-200 flex flex-col gap-4 min-h-[380px] w-full max-w-[520px] mx-auto transition-all hover:shadow-lg">
-                      <div className="text-lg sm:text-xl font-semibold text-blue-700">
+                      <div className="text-lg font-semibold text-blue-700">
                         {f.id}. {f.icon} {f.title}
                       </div>
-                      <p className="text-gray-700 text-base leading-relaxed">
-                        {f.description}
-                      </p>
+                      <p className="text-gray-700">{f.description}</p>
                       <div className="rounded-md overflow-hidden border border-gray-100 bg-gray-50">
                         {f.component?.()}
                       </div>
