@@ -33,9 +33,7 @@ export default function EmployerChatSystem() {
       : jobs.filter((job) => job.method.includes(viewMode));
 
   return (
-    <MainCardLayout
-      title="💬 ระบบพูดคุยกับนายจ้าง"
-      subtitle="แชทหรือวิดีโอคอลกับนายจ้างได้โดยตรงผ่านระบบ">
+    <MainCardLayout>
       {/* Toggle */}
       <div className="flex gap-4 justify-center mb-6">
         <button

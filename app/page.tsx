@@ -53,41 +53,6 @@ const featuresJob = [
     component: () => <OneWayVideoInterview />,
   },
 
-  //   5️⃣ ระบบนัดสัมภาษณ์และแจ้งเตือน
-
-  // UI Mockup:
-
-  // Modal เลือก “วันเวลา” (Date Picker + Time Slot)
-
-  // ปุ่ม “ส่งให้ผู้สมัครเลือก”
-
-  // ในหน้า Dashboard มีป้าย ⚠️ แจ้งวันสัมภาษณ์ที่ใกล้ถึง
-
-  // เทคนิคแนะนำ:
-
-  // date-fns / dayjs
-
-  // Calendar API Integration (Google / Outlook)
-
-  // Job Scheduler (node-schedule / Hangfire)
-
-  // 6️⃣ Dashboard / รายงานการรับสมัคร
-
-  // UI Mockup:
-
-  // กราฟ Funnel: สมัคร → ผ่านคัดกรอง → สัมภาษณ์ → รับเข้าทำงาน
-
-  // Metric Card เช่น “เวลาคัดกรองเฉลี่ย: 3.4 วัน”
-
-  // Dropdown เลือกตำแหน่งงานเพื่อ filter รายงาน
-
-  // เทคนิคแนะนำ:
-
-  // Recharts / Chart.js
-
-  // useSWR / React Query → ดึงข้อมูลแบบ cache
-
-  // API Layer (NestJS / .NET WebApi) → Endpoint /report
   {
     id: 5,
     icon: "🧑‍🤝‍🧑",
@@ -100,10 +65,10 @@ const featuresJob = [
     id: 6,
     icon: "📂",
     title: "Dashboard / รายงานการรับสมัคร",
-    description: "Dashboard แสดงกราฟ Funnel และ Metric พร้อมเลือกตำแหน่งงานเพื่อดูรายงานแบบเจาะจง",
+    description:
+      "Dashboard แสดงกราฟ Funnel และ Metric พร้อมเลือกตำแหน่งงานเพื่อดูรายงานแบบเจาะจง",
     component: () => <Dashboard />,
   },
-  
 ];
 
 const features = [
@@ -221,13 +186,13 @@ export default function Home() {
             <div className="font-sans min-h-screen p-6 sm:p-2 md:p-4 bg-gray-50">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-xl sm:text-xl font-bold text-center text-blue-600 mb-6">
-                  👵🏻👴🏻 ฟีเจอร์เด่นของระบบหางานเพื่อผู้สูงอายุ / ผู้พิการ
+                  🕵🏻🏢 ฟีเจอร์เด่นของระบบหางานเพื่อผู้สูงอายุ / ผู้พิการ
                 </h2>
-
+{/* 
                 <div className="text-sm sm:text-base text-center text-gray-600 mb-8">
                   ระบบถูกออกแบบให้เข้าถึงง่าย ใช้งานง่าย
                   และครอบคลุมสำหรับผู้สูงอายุและผู้พิการ
-                </div>
+                </div> */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-1 gap-8 justify-items-center">
                   {featuresJob.map((f) => (

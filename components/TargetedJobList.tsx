@@ -30,7 +30,7 @@ export default function TargetedJobList() {
   const filteredJobs = jobs.filter((job) => job.target === targetGroup);
 
   return (
-    <MainCardLayout title="🧩 งานเฉพาะกลุ่ม" subtitle="เลือกดูงานเฉพาะสำหรับผู้สูงอายุหรือผู้พิการ">
+    <MainCardLayout >
       {/* Toggle */}
       <div className="flex gap-4 items-center justify-center mb-6">
         <button

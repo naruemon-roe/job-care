@@ -26,15 +26,16 @@ export default function RegisterForm() {
   }, []);
 
   const startVoiceInput = (
-    targetRef: React.RefObject<HTMLInputElement>,
+    targetRef: React.RefObject<HTMLInputElement | null>,
     field: "name" | "skill" | "area",
   ) => {
+    if (!targetRef.current) return; // <— ป้องกัน null ก่อน
     const recognition = recognitionRef.current;
     if (!recognition) return;
 
     setListeningField(field);
 
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    recognition.onresult = (event: any) => {
       const text = event.results[0][0].transcript;
       if (targetRef.current) {
         targetRef.current.value = text;
@@ -65,7 +66,7 @@ export default function RegisterForm() {
           className="w-full p-2 rounded bg-white/10 text-white placeholder-white/60"
         />
         <button
-          onClick={() => startVoiceInput(nameRef, "name")}
+          onClick={() => startVoiceInput(nameRef!, "name")}
           className="absolute right-2 top-1/2 -translate-y-1/2">
           <span className="relative">
             {listeningField === "name" && (
@@ -93,7 +94,7 @@ export default function RegisterForm() {
           className="w-full p-2 rounded bg-white/10 text-white placeholder-white/60"
         />
         <button
-          onClick={() => startVoiceInput(skillRef, "skill")}
+          onClick={() => startVoiceInput(skillRef!, "skill")}
           className="absolute right-2 top-1/2 -translate-y-1/2">
           <span className="relative">
             {listeningField === "skill" && (
@@ -121,7 +122,7 @@ export default function RegisterForm() {
           className="w-full p-2 rounded bg-white/10 text-white placeholder-white/60"
         />
         <button
-          onClick={() => startVoiceInput(areaRef, "area")}
+          onClick={() => startVoiceInput(areaRef!, "area")}
           className="absolute right-2 top-1/2 -translate-y-1/2">
           <span className="relative">
             {listeningField === "area" && (
